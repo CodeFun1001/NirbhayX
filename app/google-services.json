@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8345740347",
+    "project_id": "live-nirbhayx",
+    "storage_bucket": "live-nirbhayx.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8345740347:android:7e0dc04c3df253ebbce81e",
+        "android_client_info": {
+          "package_name": "com.img.nirbhayx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-y7c7vKjd08cA6EIU7QbyA57I6eIGNT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

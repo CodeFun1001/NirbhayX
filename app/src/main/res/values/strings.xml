@@ -1,0 +1,240 @@
+<resources>
+    <string name="app_name">NirbhayX</string>
+    <string name="login_statement">Login to NirbhayX</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_signup_st">Don\'t have an account? Sign up</string>
+    <string name="login">Login</string>
+
+    <string name="toggle_password_visibility">Toggle password visibility</string>
+    <string name="sign_up">Create Account</string>
+    <string name="signup_login_st">Already have an account? Login</string>
+    <string name="name">Username</string>
+    <string name="address">Address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="error_msg">Something went wrong</string>
+    <string name="welcome">Welcome to NirbhayX!</string>
+    <string name="tagline">Tap Fearlessly. Live NirbhayX.</string>
+
+    <string name="safety_tips_header">Safety Tips - Be Aware. Be Prepared.</string>
+    <string name="toggle_bookmarks">Toggle Bookmarks</string>
+    <string name="search_safety_tips">Search safety tips...</string>
+    <string name="all_categories">All</string>
+    <string name="no_bookmarked_tips">No bookmarked tips yet. Tap the bookmark icon to save tips for quick access.</string>
+    <string name="no_tips_found">No safety tips found matching your search.</string>
+    <string name="bookmark_tip">Bookmark this tip</string>
+    <string name="steps_to_follow">Steps to Follow:</string>
+    <string name="emergency_numbers">Emergency Numbers:</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="expand">Show more</string>
+    <string name="collapse">Show less</string>
+
+    <!-- Categories -->
+    <string name="category_self_defense">Self-Defense</string>
+    <string name="category_cyber_safety">Cyber Safety</string>
+    <string name="category_women_safety">Women\'s Safety</string>
+    <string name="category_night_travel">Night Travel</string>
+    <string name="category_emergency_contacts">Emergency Contacts</string>
+    <string name="category_public_transport">Public Transport</string>
+    <string name="category_home_safety">Home Safety</string>
+    <string name="category_workplace_safety">Workplace Safety</string>
+    <string name="category_mental_safety">Mental Safety</string>
+    <string name="category_disaster_prep">Disaster Prep</string>
+    <string name="category_child_safety">Child Safety</string>
+    <string name="category_first_aid">First Aid</string>
+    <string name="category_senior_safety">Senior Safety</string>
+    <string name="category_lgbtq_safety">LGBTQ+ Safety</string>
+    <string name="category_solo_travel">Solo Travel</string>
+    <string name="category_legal_rights">Legal Rights</string>
+
+    <!-- Self-Defense Tips -->
+    <string name="tip_wrist_grab_escape_title">How to Escape a Wrist Grab</string>
+    <string name="tip_wrist_grab_escape_content">Learn the basic technique to break free from an attacker\'s grip. The key is to twist toward the thumb - the weakest part of their grip. This simple move can buy you crucial seconds to escape.</string>
+    <string name="step_wrist_grab_1">Stay calm and don\'t panic when grabbed</string>
+    <string name="step_wrist_grab_2">Identify where their thumb is positioned</string>
+    <string name="step_wrist_grab_3">Rotate your wrist sharply toward their thumb</string>
+    <string name="step_wrist_grab_4">Pull away forcefully and run to safety immediately</string>
+
+    <string name="tip_pressure_points_title">Target Vulnerable Pressure Points</string>
+    <string name="tip_pressure_points_content">If you must defend yourself, aim for areas that cause maximum impact with minimal force. These pressure points can disable an attacker long enough for you to escape safely.</string>
+    <string name="step_pressure_eyes">Eyes: Use fingers to poke or rake across attacker\'s eyes</string>
+    <string name="step_pressure_nose">Nose: Strike upward with palm heel to break nose</string>
+    <string name="step_pressure_throat">Throat: Jab with stiff fingers to the Adam\'s apple</string>
+    <string name="step_pressure_groin">Groin: Knee or kick forcefully to disable attacker</string>
+    <string name="step_pressure_knees">Knees: Kick to break kneecap and prevent pursuit</string>
+
+    <string name="tip_carry_items_title">Essential Safety Items to Carry</string>
+    <string name="tip_carry_items_content">Always be prepared with these legal self-defense tools. Keep them easily accessible but concealed. Practice using them so you can react quickly in an emergency.</string>
+    <string name="carry_pepper_spray">Pepper spray: Legal and effective, aim for eyes and mouth</string>
+    <string name="carry_whistle">Loud whistle: Attracts attention and startles attackers</string>
+    <string name="carry_personal_alarm">Personal alarm: 120dB+ sound to disorient and alert others</string>
+    <string name="carry_keys_defense">Keys between fingers: Makeshift weapon for close combat</string>
+
+    <string name="tip_situational_awareness_title">Stay Alert and Aware</string>
+    <string name="tip_situational_awareness_content">Most attacks can be prevented by staying vigilant. Trust your instincts - if something feels wrong, it probably is. Confidence and awareness are your best defense.</string>
+
+    <!-- Cyber Safety Tips -->
+    <string name="tip_phishing_title">Recognize and Avoid Phishing Attacks</string>
+    <string name="tip_phishing_content">Cybercriminals use fake emails, texts, and websites to steal your personal information. Never click suspicious links or download attachments from unknown sources. When in doubt, verify directly.</string>
+    <string name="verify_sender_email">Check sender email address carefully for misspellings</string>
+    <string name="check_suspicious_links">Hover over links to see actual destination before clicking</string>
+    <string name="never_share_passwords">Never share passwords or OTPs via email or SMS</string>
+    <string name="use_two_factor_auth">Enable 2FA on all important accounts (banking, email, social media)</string>
+
+    <string name="tip_social_privacy_title">Secure Your Social Media Privacy</string>
+    <string name="tip_social_privacy_content">Oversharing on social media makes you a target for criminals and stalkers. Limit what strangers can see about your life, location, and daily routines.</string>
+    <string name="review_privacy_settings">Review and tighten privacy settings on all platforms</string>
+    <string name="limit_location_sharing">Turn off location sharing for posts and stories</string>
+    <string name="avoid_oversharing">Don\'t post real-time locations or travel plans</string>
+    <string name="verify_friend_requests">Only accept friend requests from people you know personally</string>
+
+    <string name="tip_safe_browsing_title">Practice Safe Browsing Habits</string>
+    <string name="tip_safe_browsing_content">Protect yourself from malware and identity theft by being cautious online. Use secure connections, especially for banking and shopping.</string>
+
+    <!-- Women's Safety Tips -->
+    <string name="tip_cab_safety_title">Stay Safe in Ride-Sharing Services</string>
+    <string name="tip_cab_safety_content">Use built-in safety features of Ola, Uber, and other ride-sharing apps. Always verify the driver and vehicle before getting in. Trust your instincts if something feels wrong.</string>
+    <string name="share_ride_details">Share trip details with trusted contacts before starting</string>
+    <string name="use_sos_features">Know how to use in-app SOS and emergency buttons</string>
+    <string name="sit_behind_driver">Sit behind the driver, not in the front passenger seat</string>
+    <string name="keep_emergency_contacts_ready">Keep emergency contacts easily accessible on your phone</string>
+
+    <string name="tip_harassment_response_title">How to Respond to Harassment</string>
+    <string name="tip_harassment_response_content">Whether in public transport, workplace, or streets, know how to respond to harassment effectively. Your safety is the priority - be loud, be seen, get help.</string>
+    <string name="speak_loudly_firmly">Speak loudly and firmly: \'STOP! LEAVE ME ALONE!\'</string>
+    <string name="move_to_crowd">Move towards crowds, well-lit areas, or authorities</string>
+    <string name="yell_fire_not_help">Yell \'FIRE\' instead of \'HELP\' - people respond faster</string>
+    <string name="contact_authorities">Call 100 (Police) or 1091 (Women\'s Helpline) immediately</string>
+
+    <string name="tip_dress_mobility_title">Dress for Safety and Mobility</string>
+    <string name="tip_dress_mobility_content">In potentially unsafe situations, prioritize mobility over fashion. Wear clothes and shoes that allow you to run or defend yourself if needed.</string>
+
+    <!-- Night Travel Safety -->
+    <string name="tip_night_travel_title">Safe Night Travel Strategies</string>
+    <string name="tip_night_travel_content">Extra caution is needed after dark. Plan your route, stay in well-lit areas, and always let someone know your whereabouts. Your confidence and awareness can deter potential threats.</string>
+    <string name="plan_route_advance">Plan your route in advance using well-lit main roads</string>
+    <string name="stick_well_lit_areas">Avoid shortcuts through dark alleys or isolated areas</string>
+    <string name="walk_confidently">Walk with purpose and confidence - scan your surroundings</string>
+    <string name="use_phone_flashlight">Use phone flashlight in dimly lit areas</string>
+    <string name="travel_in_groups">Travel with friends whenever possible</string>
+
+    <string name="tip_night_transport_title">Using Public Transport at Night</string>
+    <string name="tip_night_transport_content">When using buses, trains, or metro at night, choose your seats wisely and stay alert. Inform someone about your travel plans and expected arrival time.</string>
+
+    <!-- Emergency Contacts -->
+    <string name="tip_emergency_numbers_title">Essential Indian Emergency Numbers</string>
+    <string name="tip_emergency_numbers_content">Memorize these crucial numbers and program them into your phone\'s speed dial. In an emergency, every second counts. These are free to call from any network.</string>
+
+    <string name="tip_ice_contacts_title">Set Up ICE (In Case of Emergency) Contacts</string>
+    <string name="tip_ice_contacts_content">ICE contacts help first responders reach your family in emergencies. Set them up in your phone\'s emergency contact section and on your lock screen.</string>
+
+    <!-- Public Transport Safety -->
+    <string name="tip_transport_seating_title">Choose Safe Seating in Public Transport</string>
+    <string name="tip_transport_seating_content">Strategic seating can prevent harassment and ensure quick exit in emergencies. Sit near exits, drivers, or conductors when possible.</string>
+
+    <string name="tip_transport_awareness_title">Stay Alert During Transit</string>
+    <string name="tip_transport_awareness_content">Keep your belongings secure and stay aware of your surroundings. Don\'t fall asleep or get too distracted by your phone during long journeys.</string>
+
+    <!-- Home Safety -->
+    <string name="tip_home_security_title">Secure Your Home Properly</string>
+    <string name="tip_home_security_content">Your home should be your safest space. Use proper locks, verify visitors, and have emergency procedures in place for all family members.</string>
+
+    <string name="tip_visitor_verification_title">Verify Unknown Visitors Safely</string>
+    <string name="tip_visitor_verification_content">Never open your door to strangers without proper verification. Use peepholes, intercoms, or ask for identification through the closed door.</string>
+
+    <!-- Workplace/College Safety -->
+    <string name="tip_workplace_harassment_title">Dealing with Workplace Harassment</string>
+    <string name="tip_workplace_harassment_content">Know your rights and reporting procedures. Document incidents and report to HR or authorities immediately. Your workplace should be safe and respectful.</string>
+
+    <string name="tip_campus_safety_title">Stay Safe on Campus</string>
+    <string name="tip_campus_safety_content">Familiarize yourself with campus security, emergency phones, and safe routes. Use the buddy system, especially during late hours.</string>
+
+    <!-- Mental Safety & Boundaries -->
+    <string name="tip_mental_boundaries_title">Set and Maintain Personal Boundaries</string>
+    <string name="tip_mental_boundaries_content">Learn to say NO firmly and remove yourself from uncomfortable situations. Trust your instincts about people and situations that feel wrong.</string>
+
+    <string name="tip_gaslighting_awareness_title">Recognize Manipulation Tactics</string>
+    <string name="tip_gaslighting_awareness_content">Learn to identify gaslighting, guilt-tripping, and other manipulation tactics. If someone constantly makes you doubt yourself, seek outside perspective.</string>
+
+    <!-- Disaster Preparedness -->
+    <string name="tip_earthquake_safety_title">Earthquake Safety: Drop, Cover, Hold</string>
+    <string name="tip_earthquake_safety_content">During an earthquake, DROP to your hands and knees, take COVER under a sturdy desk or table, and HOLD ON until the shaking stops. Stay away from windows and heavy objects.</string>
+
+    <string name="tip_fire_safety_title">Fire Safety and Evacuation</string>
+    <string name="tip_fire_safety_content">In case of fire, get low to avoid smoke, feel doors before opening, and exit immediately. Never use elevators during a fire emergency.</string>
+
+    <string name="tip_stampede_safety_title">Surviving Crowd Stampedes</string>
+    <string name="tip_stampede_safety_content">In a stampede, stay on your feet, move with the crowd (not against it), and protect your chest with your arms in a boxer\'s stance. Look for gaps to escape.</string>
+
+    <!-- Child/Teen Safety -->
+    <string name="tip_stranger_danger_title">Teaching Children About Stranger Danger</string>
+    <string name="tip_stranger_danger_content">Teach children never to go with strangers, even if they claim to know their parents. Identify safe adults they can approach if scared or lost.</string>
+
+    <string name="tip_internet_safety_kids_title">Internet Safety for Children</string>
+    <string name="tip_internet_safety_kids_content">Monitor children\'s internet use, enable parental controls, and teach them never to share personal information or meet online friends without approval.</string>
+
+    <!-- First Aid -->
+    <string name="tip_basic_first_aid_title">Essential First Aid Basics</string>
+    <string name="tip_basic_first_aid_content">Learn basic first aid to help others and yourself in emergencies. Keep a first aid kit at home and in your car with essential supplies.</string>
+
+    <string name="tip_cpr_basics_title">CPR and Emergency Response</string>
+    <string name="tip_cpr_basics_content">If someone is unresponsive and not breathing, begin chest compressions (100-120 per minute) and rescue breaths until help arrives. Consider taking a certified CPR course.</string>
+
+    <!-- Senior Safety -->
+    <string name="tip_senior_home_safety_title">Home Safety for Seniors</string>
+    <string name="tip_senior_home_safety_content">Install grab bars, remove tripping hazards, use night lights, and consider medical alert systems. Regular check-ins with family or neighbors are important.</string>
+
+    <string name="tip_senior_scam_awareness_title">Protecting Seniors from Scams</string>
+    <string name="tip_senior_scam_awareness_content">Be wary of unsolicited calls, emails, or visits asking for personal information. If an offer sounds too good to be true, it probably is.</string>
+
+    <!-- LGBTQ+ Safety -->
+    <string name="tip_lgbtq_community_safety_title">LGBTQ+ Community Safety</string>
+    <string name="tip_lgbtq_community_safety_content">Connect with trusted queer-friendly spaces and support networks. When meeting new people, choose public venues and inform trusted friends about your plans.</string>
+
+    <string name="tip_lgbtq_support_resources_title">LGBTQ+ Support Resources</string>
+    <string name="tip_lgbtq_support_resources_content">Familiarize yourself with LGBTQ+ helplines and support organizations. Know your rights - harassment based on sexual orientation or gender identity is illegal.</string>
+
+    <!-- Solo Travel -->
+    <string name="tip_solo_travel_preparation_title">Solo Travel Safety Preparation</string>
+    <string name="tip_solo_travel_preparation_content">Share your itinerary with someone, get local SIM cards, download offline maps, and research cultural norms. Don\'t reveal you\'re traveling alone to strangers.</string>
+
+    <string name="tip_solo_travel_accommodation_title">Safe Accommodation Choices</string>
+    <string name="tip_solo_travel_accommodation_content">Choose well-reviewed accommodations in safe areas. Check security features like proper locks, well-lit entrances, and 24-hour reception.</string>
+
+    <!-- Legal Rights -->
+    <string name="tip_legal_rights_women_title">Women\'s Legal Rights in India</string>
+    <string name="tip_legal_rights_women_content">Know your rights under Indian law. Police must register FIRs for crimes against women immediately. You\'re entitled to protection and support from authorities.</string>
+
+    <string name="tip_cybercrime_reporting_title">Reporting Cybercrimes</string>
+    <string name="tip_cybercrime_reporting_content">Report online harassment, stalking, or fraud to the National Cyber Crime Reporting Portal (cybercrime.gov.in) or local cyber police stations.</string>
+
+    <!-- General Safety Tips -->
+    <string name="tip_trust_instincts_title">Always Trust Your Instincts</string>
+    <string name="tip_trust_instincts_content">Your gut feeling is often right. If a person, place, or situation makes you uncomfortable, remove yourself immediately. It\'s better to be rude than unsafe.</string>
+
+    <string name="tip_personal_info_privacy_title">Protect Your Personal Information</string>
+    <string name="tip_personal_info_privacy_content">Never disclose personal details like your address, when you\'re home alone, or that you\'re new to an area. Act confident and familiar with your surroundings even when you\'re not.</string>
+
+    <string name="tip_communication_safety_title">Safe Communication Practices</string>
+    <string name="tip_communication_safety_content">Keep your phone charged, inform trusted contacts about your whereabouts, and establish check-in times. Use location sharing with trusted family or friends when traveling.</string>
+
+    <!-- Action Labels -->
+    <string name="call_number">Call %s</string>
+    <string name="share_tip">Share this tip</string>
+    <string name="save_tip">Save tip</string>
+    <string name="report_emergency">Report Emergency</string>
+    <string name="find_help">Find Help</string>
+
+    <!-- Additional Safety Resources -->
+    <string name="tip_safety_apps_title">Essential Safety Apps for India</string>
+    <string name="tip_safety_apps_content">Download and familiarize yourself with safety apps like Himmat Plus (Delhi), SafetiPin, bSafe, and your state\'s women safety app. Keep them easily accessible.</string>
+
+    <!-- Success Messages -->
+    <string name="tip_bookmarked">Tip bookmarked successfully</string>
+    <string name="tip_unbookmarked">Tip removed from bookmarks</string>
+    <string name="tip_shared">Tip shared successfully</string>
+    <string name="emergency_call_initiated">Emergency call initiated</string>
+
+</resources>
