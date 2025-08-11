@@ -41,9 +41,9 @@ It enables **instant SOS alerts via power button**, **real-time location sharing
 ---
 
 ### **Auth & Branding**
-| Login | App Logo |
-|-------|----------|
-| <img src="screenshots/light/login.jpg" width="200"/> | <img src="screenshots/demo_thumbnail.jpg" width="200"/> |
+| Login | App Logo | SignUp                                                |
+|-------|----------|-------------------------------------------------------|
+| <img src="screenshots/light/login.jpg" width="200"/> | <img src="screenshots/demo_thumbnail.jpg" width="200"/> | <img src="screenshots/light/signup.jpg" width="200"/> | 
 
 ---
 
@@ -115,5 +115,6 @@ Not hosted — distributed as **APK installation**.
 ---
 
 ## 🎥 Demo Video
-[![Watch the demo](screenshots/demo_thumbnail.jpg)](demo/demo.mp4)
+[![Watch the demo](screenshots/demo_thumbnail.jpg)](https://drive.google.com/file/d/10afTYZRNaFWXbQPCK02xNDOycP5-v7DV/view?usp=drive_link)
+
 
