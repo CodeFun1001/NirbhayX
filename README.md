@@ -19,9 +19,9 @@ It enables **instant SOS alerts via power button**, **real-time location sharing
 ## 📸 Screenshots
 
 ### **Core Features**
-| Home Screen | SOS Trigger | Profile |
-|-------------|-------------|---------|
-| ![Home Light](screenshots/light/home.jpg) ![Home Dark](screenshots/dark/home.jpg) | ![SOS](screenshots/sos.jpg) | ![Profile Light](screenshots/light/profile.jpg) ![Profile Dark](screenshots/dark/profile.jpg) |
+| Home Screen | SOS Trigger/Notifications                                                   | Profile |
+|-------------|-----------------------------------------------------------------------------|---------|
+| ![Home Light](screenshots/light/home.jpg) ![Home Dark](screenshots/dark/home.jpg) | ![SOS](screenshots/sos.jpg) ![Notifications](screenshots/notifications.jpg) | ![Profile Light](screenshots/light/profile.jpg) ![Profile Dark](screenshots/dark/profile.jpg) |
 
 | Emergency Sharing | Emergency Contacts | Medical Info |
 |-------------------|--------------------|--------------|
@@ -30,13 +30,13 @@ It enables **instant SOS alerts via power button**, **real-time location sharing
 ---
 
 ### **Additional Features**
-| Safety Tips | Fake Call | Widgets / Lock Screen |
-|-------------|-----------|-----------------------|
-| ![Safety Tips](screenshots/light/tips.jpg) | ![Fake Call Light](screenshots/light/fakecall.jpg) ![Fake Call UI](screenshots/fakecall.jpg) | ![Widgets](screenshots/widget.jpg) |
+| Safety Tips                                                                         | Fake Call | Widgets / Notifications on Lock Screen |
+|-------------------------------------------------------------------------------------|-----------|----------------------------------------|
+| ![Safety Tips](screenshots/light/tips.jpg)![Safety Tips](screenshots/dark/tips.jpg) | ![Fake Call Light](screenshots/light/fakecall.jpg) ![Fake Call UI](screenshots/fakecall.jpg) | ![Widgets](screenshots/widget.jpg)  ![Notifications](screenshots/notifications.jpg)   |
 
-| Notifications | Community Safety Hub *(UI done, backend planned)* | Settings |
-|---------------|---------------------------------------------------|----------|
-| ![Notifications](screenshots/notifications.jpg) | ![Community](screenshots/light/community.jpg) | ![Settings Light](screenshots/light/settings.jpg) |
+| Community Safety Hub *(UI done, backend planned)* | Settings | About                                  | Help                                |
+|---------------------------------------------------|----------|----------------------------------------|-------------------------------------|
+| ![Community](screenshots/light/community.jpg)     | ![Settings](screenshots/light/settings.jpg) | ![About ](screenshots/light/about.jpg) | ![Help](screenshots/light/help.jpg) |
 
 ---
 
@@ -109,12 +109,11 @@ Not hosted — distributed as **APK installation**.
 
 ---
 
-## Team Members
+## Team Member
 - **Beejasani S. Patil** *(Solo Developer — Android & Backend)*
 
 ---
 
-## Demo Video
-- **Video Link:** `demo/demo.mp4` *(placeholder in repo)*  
-- **GitHub Preview:**  
-![Watch the demo](screenshots/demo_thumbnail.jpg)
+## 🎥 Demo Video
+[![Watch the demo](screenshots/demo_thumbnail.jpg)](demo/demo.mp4)
+
