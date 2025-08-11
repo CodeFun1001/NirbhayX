@@ -86,6 +86,17 @@
                 android:value="Emergency monitoring service" />
         </service>
 
+        <!-- Emergency Medical Info Display Service -->
+        <service
+            android:name=".services.EmergencyMedicalDisplayService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Emergency medical information display" />
+        </service>
+
         <!-- Emergency Notification Service for OneSignal alerts -->
         <service
             android:name=".services.EmergencyNotificationService"
@@ -113,6 +124,7 @@
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.SCREEN_ON" />
                 <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
 

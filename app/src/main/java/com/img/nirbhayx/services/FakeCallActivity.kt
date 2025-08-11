@@ -399,7 +399,7 @@ fun CallOngoingScreen(activity: FakeCallActivity) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "Mom",
+                    text = "Dad",
                     color = Color.White,
                     fontSize = 28.sp,
                     fontWeight = FontWeight.Medium

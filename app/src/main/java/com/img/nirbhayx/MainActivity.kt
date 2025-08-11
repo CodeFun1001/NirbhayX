@@ -1,6 +1,7 @@
 package com.img.nirbhayx
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -22,6 +23,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
@@ -36,6 +38,7 @@ import com.img.nirbhayx.viewmodels.ActivityViewModel
 import com.img.nirbhayx.viewmodels.AuthViewModel
 import com.img.nirbhayx.viewmodels.EmergencyContactsViewModel
 import com.img.nirbhayx.viewmodels.EmergencySharingViewModel
+import com.img.nirbhayx.viewmodels.MedicalInfoViewModel
 import com.img.nirbhayx.viewmodels.SafetyTipsViewModel
 import com.img.nirbhayx.viewmodels.SafetyTipsViewModelFactory
 import com.img.nirbhayx.viewmodels.ThemeViewModel
@@ -51,16 +54,19 @@ class MainActivity : ComponentActivity() {
     private lateinit var locationUtils: LocationUtils
     private lateinit var preferencesManager: PreferencesManager
 
+    @SuppressLint("ViewModelConstructorInComposable")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         preferencesManager = PreferencesManager(this)
-
         locationUtils = LocationUtils(this)
 
-        val initialUid = FirebaseAuth.getInstance().currentUser?.uid ?: "guest"
+        // Initialize database first
         com.img.nirbhayx.data.Graph.initDatabase(application)
+
+        // Initialize repositories with current user or guest
+        val initialUid = FirebaseAuth.getInstance().currentUser?.uid ?: "guest"
         com.img.nirbhayx.data.Graph.createRepositories(initialUid)
 
         setContent {
@@ -68,10 +74,15 @@ class MainActivity : ComponentActivity() {
             val activityViewModel: ActivityViewModel by viewModels()
             val emergencyContactsViewModel: EmergencyContactsViewModel by viewModels()
             val emergencySharingViewModel: EmergencySharingViewModel by viewModels()
-            val safetyTipsViewModel: SafetyTipsViewModel = ViewModelProvider(
-                this,
-                SafetyTipsViewModelFactory(com.img.nirbhayx.data.Graph.safetyTipRepository)
-            ).get(SafetyTipsViewModel::class.java)
+            val medicalInfoViewModel: MedicalInfoViewModel by viewModels()
+
+            // Create SafetyTipsViewModel AFTER repositories are initialized
+            val safetyTipsViewModel: SafetyTipsViewModel = remember {
+                ViewModelProvider(
+                    this@MainActivity,
+                    SafetyTipsViewModelFactory(com.img.nirbhayx.data.Graph.safetyTipRepository)
+                ).get(SafetyTipsViewModel::class.java)
+            }
 
             val themeViewModel = ThemeViewModel(preferencesManager)
             val isDarkTheme by themeViewModel.isDarkTheme.collectAsState()
@@ -85,6 +96,7 @@ class MainActivity : ComponentActivity() {
                         emergencyContactsViewModel = emergencyContactsViewModel,
                         emergencySharingViewModel = emergencySharingViewModel,
                         safetyTipsViewModel = safetyTipsViewModel,
+                        medicalInfoViewModel = medicalInfoViewModel,
                         isDarkTheme = isDarkTheme,
                         onThemeChange = { newTheme ->
                             themeViewModel.setTheme(newTheme)
@@ -94,19 +106,14 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        FirebaseAuth.getInstance().addAuthStateListener { auth ->
-            auth.currentUser?.uid?.let { uid ->
-                if (uid != "guest") {
-                    com.img.nirbhayx.data.Graph.createRepositories(uid)
-                }
-            }
-        }
+        // Let AuthViewModel handle auth state changes
+        // Remove the auth state listener to avoid conflicts
 
         setupEmergencySystem()
-
         requestRequiredPermissions()
     }
 
+    // Rest of your MainActivity code remains the same...
     private fun setupLocationUpdates(uid: String) {
         if (locationUtils.hasLocationPermission(this)) {
             locationUtils.requestLocationUpdates { location ->
@@ -165,6 +172,7 @@ class MainActivity : ComponentActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationManager = getSystemService(NotificationManager::class.java)
 
+            // SOS Confirmation Channel (your existing working channel)
             val sosChannel = NotificationChannel(
                 "SOS_CHANNEL",
                 "Emergency SOS Alerts",
@@ -177,6 +185,21 @@ class MainActivity : ComponentActivity() {
                 lockscreenVisibility = NotificationCompat.VISIBILITY_PUBLIC
             }
 
+            // Medical Info Channel (NEW - for displaying medical information)
+            val medicalInfoChannel = NotificationChannel(
+                "EMERGENCY_MEDICAL_INFO",
+                "Emergency Medical Information",
+                NotificationManager.IMPORTANCE_HIGH
+            ).apply {
+                description = "Emergency medical information for first responders and bystanders"
+                enableVibration(false) // No vibration to avoid interfering with SOS channel
+                enableLights(true)
+                setBypassDnd(true)
+                lockscreenVisibility = NotificationCompat.VISIBILITY_PUBLIC
+                setShowBadge(true)
+            }
+
+            // Emergency Background Service Channel
             val serviceChannel = NotificationChannel(
                 "EMERGENCY_SERVICE_CHANNEL",
                 "Emergency Background Service",
@@ -188,6 +211,7 @@ class MainActivity : ComponentActivity() {
                 setShowBadge(false)
             }
 
+            // Community Emergency Alerts Channel
             val emergencyAlertsChannel = NotificationChannel(
                 "EMERGENCY_ALERTS_CHANNEL",
                 "Emergency Community Alerts",
@@ -202,6 +226,7 @@ class MainActivity : ComponentActivity() {
                 setShowBadge(true)
             }
 
+            // Community Safety Alerts Channel
             val communityChannel = NotificationChannel(
                 "community_alerts",
                 "Community Safety Alerts",
@@ -213,12 +238,14 @@ class MainActivity : ComponentActivity() {
                 setShowBadge(true)
             }
 
+            // Create all channels
             notificationManager?.createNotificationChannel(sosChannel)
+            notificationManager?.createNotificationChannel(medicalInfoChannel)
             notificationManager?.createNotificationChannel(serviceChannel)
             notificationManager?.createNotificationChannel(emergencyAlertsChannel)
             notificationManager?.createNotificationChannel(communityChannel)
 
-            Log.d(TAG, "Notification channels created successfully")
+            Log.d(TAG, "All notification channels created successfully")
         }
     }
 

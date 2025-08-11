@@ -31,7 +31,7 @@ fun NirbhayXTheme(
 
             background = JetBlack,
             onBackground = SnowWhite,
-            surface = CharcoalBlack,
+            surface = GunmetalGray,
             onSurface = SnowWhite,
             surfaceVariant = DarkSlate,
             onSurfaceVariant = LightGray,
@@ -50,7 +50,7 @@ fun NirbhayXTheme(
 
             surfaceBright = ModernGray,
             surfaceDim = CharcoalBlack,
-            surfaceContainer = DarkSlate,
+            surfaceContainer = GunmetalGray,
             surfaceContainerHigh = CharcoalBlack,
             surfaceContainerHighest = JetBlack,
             surfaceContainerLow = DarkSlate,

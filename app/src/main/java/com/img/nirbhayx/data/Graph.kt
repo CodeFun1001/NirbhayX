@@ -12,6 +12,8 @@ object Graph {
     private var _emergencyContactRepository: EmergencyContactRepository? = null
     private var _activityRepository: ActivityRepository? = null
     private var _safetyTipRepository: SafetyTipsRepository? = null
+    private var _medicalInfoRepository: MedicalInfoRepository? = null
+
 
     val emergencyContactRepository: EmergencyContactRepository
         get() = _emergencyContactRepository ?: throw IllegalStateException("Repository not initialized. Call createRepositories() first.")
@@ -21,6 +23,9 @@ object Graph {
 
     val safetyTipRepository: SafetyTipsRepository
         get() = _safetyTipRepository ?: throw IllegalStateException("Repository not initialized. Call createRepositories() first.")
+
+    val medicalInfoRepository: MedicalInfoRepository
+        get() = _medicalInfoRepository ?: throw IllegalStateException("Repository not initialized. Call createRepositories() first.")
 
     fun initDatabase(app: Application) {
         if (!::database.isInitialized) {
@@ -52,11 +57,16 @@ object Graph {
         _safetyTipRepository = SafetyTipsRepository(
             safetyTipDao = database.safetyTipDao()
         )
+
+        _medicalInfoRepository = MedicalInfoRepository(
+            medicalInfoDao = database.medicalInfoDao()
+        )
     }
 
     fun clearRepositories() {
         _emergencyContactRepository = null
         _activityRepository = null
         _safetyTipRepository = null
+        _medicalInfoRepository = null
     }
 }

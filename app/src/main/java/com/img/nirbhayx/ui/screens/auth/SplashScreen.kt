@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.google.firebase.auth.FirebaseAuth
 import com.img.nirbhayx.R
 import com.img.nirbhayx.ui.theme.SaffronGlow
 import com.img.nirbhayx.ui.theme.SunshineYellow
@@ -33,8 +34,18 @@ import kotlinx.coroutines.delay
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(Unit) {
         delay(1500)
-        navController.navigate("login") {
-            popUpTo("splash") { inclusive = true }
+
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            navController.navigate("home") {
+                popUpTo("splash") { inclusive = true }
+                launchSingleTop = true
+            }
+        } else {
+            navController.navigate("login") {
+                popUpTo("splash") { inclusive = true }
+                launchSingleTop = true
+            }
         }
     }
 

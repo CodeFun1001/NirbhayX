@@ -7,9 +7,10 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
 
-// DataStore extension
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class PreferencesManager(private val context: Context) {
@@ -18,13 +19,23 @@ class PreferencesManager(private val context: Context) {
         val DARK_THEME_KEY = booleanPreferencesKey("dark_theme")
     }
 
-    val isDarkTheme: Flow<Boolean> = context.dataStore.data.map { preferences ->
-        preferences[DARK_THEME_KEY] ?: false
-    }
+    val isDarkTheme: Flow<Boolean> = context.dataStore.data
+        .map { preferences ->
+            preferences[DARK_THEME_KEY] ?: false
+        }
+        .catch { exception ->
+            emit(false)
+        }
+        .onStart {
+            emit(false)
+        }
 
     suspend fun setDarkTheme(isDark: Boolean) {
-        context.dataStore.edit { preferences ->
-            preferences[DARK_THEME_KEY] = isDark
+        try {
+            context.dataStore.edit { preferences ->
+                preferences[DARK_THEME_KEY] = isDark
+            }
+        } catch (e: Exception) {
         }
     }
 

@@ -8,6 +8,7 @@ import android.media.AudioAttributes
 import android.net.Uri
 import android.os.Build
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import com.img.nirbhayx.data.Graph
 
 class NirbhayXApp : Application() {
@@ -23,7 +24,6 @@ class NirbhayXApp : Application() {
         Graph.initDatabase(this)
 
         createNotificationChannels()
-
         createCommunityChannel()
     }
 
@@ -32,6 +32,7 @@ class NirbhayXApp : Application() {
             val notificationManager =
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
+            // SOS Confirmation Channel
             val sosChannel = NotificationChannel(
                 "SOS_CHANNEL",
                 "SOS Alerts",
@@ -41,8 +42,25 @@ class NirbhayXApp : Application() {
                 enableVibration(true)
                 enableLights(true)
                 setShowBadge(true)
+                lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
+                setBypassDnd(true)
             }
 
+            // Medical Info Channel (NEW)
+            val medicalInfoChannel = NotificationChannel(
+                "EMERGENCY_MEDICAL_INFO",
+                "Emergency Medical Information",
+                NotificationManager.IMPORTANCE_HIGH
+            ).apply {
+                description = "Emergency medical information for first responders and bystanders"
+                enableVibration(false) // No vibration to avoid interfering with SOS
+                enableLights(true)
+                setShowBadge(true)
+                lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
+                setBypassDnd(true)
+            }
+
+            // Emergency Alerts Channel
             val emergencyChannel = NotificationChannel(
                 "EMERGENCY_ALERTS_CHANNEL",
                 "Emergency Alerts",
@@ -55,6 +73,7 @@ class NirbhayXApp : Application() {
                 lockscreenVisibility = android.app.Notification.VISIBILITY_PUBLIC
             }
 
+            // Community Channel
             val communityChannel = NotificationChannel(
                 "community_alerts",
                 "Community Alerts",
@@ -66,11 +85,26 @@ class NirbhayXApp : Application() {
                 setShowBadge(true)
             }
 
+            // Emergency Background Service Channel
+            val serviceChannel = NotificationChannel(
+                "EMERGENCY_SERVICE_CHANNEL",
+                "Emergency Background Service",
+                NotificationManager.IMPORTANCE_LOW
+            ).apply {
+                description = "Keeps emergency features running in background"
+                enableVibration(false)
+                enableLights(false)
+                setShowBadge(false)
+            }
+
+            // Create all channels
             notificationManager.createNotificationChannel(sosChannel)
+            notificationManager.createNotificationChannel(medicalInfoChannel)
             notificationManager.createNotificationChannel(emergencyChannel)
             notificationManager.createNotificationChannel(communityChannel)
+            notificationManager.createNotificationChannel(serviceChannel)
 
-            Log.d(TAG, "Notification channels created")
+            Log.d(TAG, "All notification channels created including medical info channel")
         }
     }
 
@@ -96,4 +130,3 @@ class NirbhayXApp : Application() {
         }
     }
 }
-

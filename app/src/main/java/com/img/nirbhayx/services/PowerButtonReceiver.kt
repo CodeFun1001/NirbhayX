@@ -2,6 +2,7 @@ package com.img.nirbhayx.services
 
 import android.Manifest
 import android.R
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -13,6 +14,8 @@ import androidx.annotation.RequiresApi
 import androidx.annotation.RequiresPermission
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.img.nirbhayx.data.Graph
 
 class PowerButtonReceiver : BroadcastReceiver() {
 
@@ -77,6 +80,9 @@ class PowerButtonReceiver : BroadcastReceiver() {
         if (pressCount >= REQUIRED_PRESSES) {
             Log.d(TAG, "🚨 TRIPLE POWER PRESS DETECTED! Triggering SOS")
             resetPressCount(context)
+
+            showMedicalInfoNotification(context)
+
             launchSosConfirmation(context)
         }
     }
@@ -87,6 +93,85 @@ class PowerButtonReceiver : BroadcastReceiver() {
             .putInt(KEY_PRESS_COUNT, 0)
             .apply()
         Log.d(TAG, "Press count reset to 0")
+    }
+
+    @RequiresPermission(Manifest.permission.POST_NOTIFICATIONS)
+    private fun showMedicalInfoNotification(context: Context) {
+        try {
+            Log.d(TAG, "🩺 Showing medical info notification...")
+
+            try {
+                val testAccess = Graph.medicalInfoRepository
+                Log.d(TAG, "✅ Graph repositories are accessible")
+            } catch (e: Exception) {
+                Log.e(TAG, "❌ Graph repositories NOT initialized - this might cause issues", e)
+
+                val userId = FirebaseAuth.getInstance().currentUser?.uid
+                if (userId != null) {
+                    Log.d(TAG, "🔧 Attempting to initialize repositories for user: $userId")
+                    try {
+                        Graph.createRepositories(userId)
+                        Log.d(TAG, "✅ Repositories initialized successfully")
+                    } catch (initError: Exception) {
+                        Log.e(TAG, "❌ Failed to initialize repositories", initError)
+                    }
+                }
+            }
+
+            val medicalIntent = Intent(context, EmergencyMedicalDisplayService::class.java).apply {
+                action = EmergencyMedicalDisplayService.ACTION_SHOW_MEDICAL_INFO
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Log.d(TAG, "🚀 Starting foreground service (API >= O)")
+                try {
+                    context.startForegroundService(medicalIntent)
+                    Log.d(TAG, "✅ startForegroundService called successfully")
+                } catch (e: Exception) {
+                    Log.e(TAG, "❌ startForegroundService failed", e)
+                    try {
+                        context.startService(medicalIntent)
+                        Log.d(TAG, "✅ Fallback startService called")
+                    } catch (fallbackError: Exception) {
+                        Log.e(TAG, "❌ Both service start methods failed", fallbackError)
+                    }
+                }
+            } else {
+                Log.d(TAG, "🚀 Starting regular service (API < O)")
+                context.startService(medicalIntent)
+            }
+
+            Log.d(TAG, "✅ Medical info notification service start requested")
+
+            android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                Log.d(TAG, "🔍 Checking if medical service is running...")
+
+                val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager
+                val runningServices = activityManager.getRunningServices(Integer.MAX_VALUE)
+
+                val medicalServiceRunning = runningServices.any {
+                    it.service.className == "com.img.nirbhayx.services.EmergencyMedicalDisplayService"
+                }
+
+                Log.d(TAG, if (medicalServiceRunning) "✅ Medical service is running" else "❌ Medical service NOT running")
+
+                val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                val activeNotifications = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    notificationManager.activeNotifications
+                } else {
+                    emptyArray()
+                }
+
+                Log.d(TAG, "📱 Active notifications count: ${activeNotifications.size}")
+                activeNotifications.forEach { notification ->
+                    Log.d(TAG, "📱 Active notification: ID=${notification.id}, Tag=${notification.tag}")
+                }
+
+            }, 2000)
+
+        } catch (e: Exception) {
+            Log.e(TAG, "💥 Critical error in showMedicalInfoNotification", e)
+        }
     }
 
     @RequiresPermission(Manifest.permission.POST_NOTIFICATIONS)
