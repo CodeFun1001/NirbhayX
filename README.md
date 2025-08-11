@@ -19,31 +19,31 @@ It enables **instant SOS alerts via power button**, **real-time location sharing
 ## 📸 Screenshots
 
 ### **Core Features**
-| Home Screen | SOS Trigger/Notifications                                                   | Profile |
-|-------------|-----------------------------------------------------------------------------|---------|
-| ![Home Light](screenshots/light/home.jpg) ![Home Dark](screenshots/dark/home.jpg) | ![SOS](screenshots/sos.jpg) ![Notifications](screenshots/notifications.jpg) | ![Profile Light](screenshots/light/profile.jpg) ![Profile Dark](screenshots/dark/profile.jpg) |
+| Home Screen | SOS Trigger / Notifications | Profile |
+|-------------|-----------------------------|---------|
+| <img src="screenshots/light/home.jpg" width="200"/> <img src="screenshots/dark/home.jpg" width="200"/> | <img src="screenshots/sos.jpg" width="200"/> <img src="screenshots/notifications.jpg" width="200"/> | <img src="screenshots/light/profile.jpg" width="200"/> <img src="screenshots/dark/profile.jpg" width="200"/> |
 
 | Emergency Sharing | Emergency Contacts | Medical Info |
 |-------------------|--------------------|--------------|
-| ![Sharing Light](screenshots/light/sharing.jpg) ![Sharing Dark](screenshots/dark/sharing.jpg) | ![Contacts Light](screenshots/light/contacts.jpg) ![Contacts Dark](screenshots/dark/contacts.jpg) | ![Medical Light](screenshots/light/medical_info.jpg) ![Medical Dark](screenshots/dark/medical_info.jpg) |
+| <img src="screenshots/light/sharing.jpg" width="200"/> <img src="screenshots/dark/sharing.jpg" width="200"/> | <img src="screenshots/light/contacts.jpg" width="200"/> <img src="screenshots/dark/contacts.jpg" width="200"/> | <img src="screenshots/light/medical_info.jpg" width="200"/> <img src="screenshots/dark/medical_info.jpg" width="200"/> |
 
 ---
 
 ### **Additional Features**
-| Safety Tips                                                                         | Fake Call | Widgets / Notifications on Lock Screen |
-|-------------------------------------------------------------------------------------|-----------|----------------------------------------|
-| ![Safety Tips](screenshots/light/tips.jpg)![Safety Tips](screenshots/dark/tips.jpg) | ![Fake Call Light](screenshots/light/fakecall.jpg) ![Fake Call UI](screenshots/fakecall.jpg) | ![Widgets](screenshots/widget.jpg)  ![Notifications](screenshots/notifications.jpg)   |
+| Safety Tips | Fake Call | Widgets / Lock Screen Notifications |
+|-------------|-----------|--------------------------------------|
+| <img src="screenshots/light/tips.jpg" width="200"/> <img src="screenshots/dark/tips.jpg" width="200"/> | <img src="screenshots/light/fakecall.jpg" width="200"/> <img src="screenshots/fakecall.jpg" width="200"/> | <img src="screenshots/widget.jpg" width="200"/> <img src="screenshots/notifications.jpg" width="200"/> |
 
-| Community Safety Hub *(UI done, backend planned)* | Settings | About                                  | Help                                |
-|---------------------------------------------------|----------|----------------------------------------|-------------------------------------|
-| ![Community](screenshots/light/community.jpg)     | ![Settings](screenshots/light/settings.jpg) | ![About ](screenshots/light/about.jpg) | ![Help](screenshots/light/help.jpg) |
+| Community Safety Hub *(UI done, backend planned)* | Settings | About | Help |
+|---------------------------------------------------|----------|-------|------|
+| <img src="screenshots/light/community.jpg" width="200"/> | <img src="screenshots/light/settings.jpg" width="200"/> | <img src="screenshots/light/about.jpg" width="200"/> | <img src="screenshots/light/help.jpg" width="200"/> |
 
 ---
 
 ### **Auth & Branding**
-| Login | App Logo                       | 
-|-------|--------------------------------|
-| ![Login](screenshots/light/login.jpg) | ![Logo](screenshots/demo_thumbnail.jpg) |
+| Login | App Logo |
+|-------|----------|
+| <img src="screenshots/light/login.jpg" width="200"/> | <img src="screenshots/demo_thumbnail.jpg" width="200"/> |
 
 ---
 
